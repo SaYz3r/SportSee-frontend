@@ -1,0 +1,46 @@
+.sidebar {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    bottom: 0;
+    z-index: 90;
+    width: var(--sidebar-width);
+    background-color: var(--color-black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.sidebar-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex: 1;
+}
+
+.icon-btn {
+    width: 64px;
+    height: 64px;
+    background-color: var(--color-white);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-copyright {
+    color: var(--color-white);
+    font-size: 0.688rem;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    opacity: 0.5;
+    margin-top: auto;
+    padding-bottom: 24px;
+}

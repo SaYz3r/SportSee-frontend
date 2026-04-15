@@ -1,0 +1,22 @@
+.greeting {
+    margin-bottom: 48px;
+    margin-top: 300px;
+    justify-items: center;
+}
+
+.greeting-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 12px;
+}
+
+.greeting-name {
+    color: var(--color-primary);
+}
+
+.greeting-subtitle {
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: var(--color-text);
+}
