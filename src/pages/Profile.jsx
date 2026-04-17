@@ -1,8 +1,10 @@
 import { useParams } from "react-router-dom"
 import { useUserData } from "../hooks/useUserData"
-import Header from "../composants/header"
-import Sidebar from "../composants/sidebar"
+import Header from "../composants/Header"
+import Sidebar from "../composants/Sidebar"
 import Greating from "../composants/Greating"
+import KeyData from "../composants/KeyData"
+import "../styles/Profile.css"
 
 function Profile() {
     const { userId } = useParams()
@@ -15,7 +17,30 @@ function Profile() {
         <>
             <Header />
             <Sidebar />
-            <Greating firstName={data.firstName} />
+            <main className="main">
+                <div className="greeting">
+                    <Greating firstName={data.firstName} />
+                </div>
+
+                <div className="dashboard">
+                    {/* Colonne gauche */}
+                    <div className="charts">
+                        <div className="activity-chart">
+                            Activité quotidienne
+                        </div>
+
+                        {/* 3 petits graphiques */}
+                        <div className="small-charts">
+                            <div className="small-chart">Sessions</div>
+                            <div className="small-chart">Radar</div>
+                            <div className="small-chart">Score</div>
+                        </div>
+                    </div>
+
+                    {/* Colonne droite */}
+                    <KeyData keyData={data.keyData} />
+                </div>
+            </main>
         </>
     )
 }

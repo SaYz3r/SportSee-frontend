@@ -1,0 +1,43 @@
+.main {
+    margin-top: var(--header-height);
+    margin-left: var(--sidebar-width);
+    min-height: calc(100vh - var(--header-height));
+    background-color: white;
+    padding: 48px 64px;
+}
+
+.greeting {
+    margin-bottom: 48px;
+}
+
+.dashboard {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+}
+
+.activity-chart {
+    width: 100%;
+    height: 280px;
+    border-radius: 5px;
+    padding: 24px 0px;
+}
+
+.charts {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    min-width: 0;
+}
+
+.small-charts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    height: 263px;
+}
+
+.small-chart {
+    height: 100%;
+}

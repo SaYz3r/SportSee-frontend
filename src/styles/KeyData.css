@@ -1,0 +1,51 @@
+.keydata-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.keydata-card {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background-color: #FBFBFB;
+    border-radius: 5px;
+    padding: 31px 32px;
+    width: 258px;
+    height: 124px;
+}
+
+.keydata-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    background-color: var(--keydata-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.keydata-icon img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.keydata-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.keydata-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.keydata-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+}

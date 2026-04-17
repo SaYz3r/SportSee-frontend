@@ -30,6 +30,7 @@ body,
 body {
     background-color: var(--color-white);
     -webkit-font-smoothing: antialiased;
+    overflow-y: hidden;
 }
 
 a {
