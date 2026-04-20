@@ -5,6 +5,7 @@ import Sidebar from "../composants/Sidebar"
 import Greating from "../composants/Greating"
 import KeyData from "../composants/KeyData"
 import "../styles/Profile.css"
+import ScoreChart from "../composants/ScoreChart"
 
 function Profile() {
     const { userId } = useParams()
@@ -33,7 +34,9 @@ function Profile() {
                         <div className="small-charts">
                             <div className="small-chart">Sessions</div>
                             <div className="small-chart">Radar</div>
-                            <div className="small-chart">Score</div>
+                            <div className="small-chart">
+                                <ScoreChart score={data.score} />
+                            </div>
                         </div>
                     </div>
 
