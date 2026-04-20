@@ -7,6 +7,7 @@ import KeyData from "../composants/KeyData"
 import "../styles/Profile.css"
 import ScoreChart from "../composants/ScoreChart"
 import RadarChart from "../composants/RadarChart"
+import SessionsChart from "../composants/SessionsChart"
 
 function Profile() {
     const { userId } = useParams()
@@ -20,31 +21,35 @@ function Profile() {
             <Header />
             <Sidebar />
             <main className="main">
-                <div className="greeting">
-                    <Greating firstName={data.mainData.firstName} />
-                </div>
-
-                <div className="dashboard">
-                    {/* Colonne gauche */}
-                    <div className="charts">
-                        <div className="activity-chart">
-                            Activité quotidienne
-                        </div>
-
-                        {/* 3 petits graphiques */}
-                        <div className="small-charts">
-                            <div className="small-chart">Sessions</div>
-                            <div className="small-chart">
-                                <RadarChart data={data.performance.data}/>
-                            </div>
-                            <div className="small-chart">
-                                <ScoreChart score={data.mainData.score} />
-                            </div>
-                        </div>
+                <div className="content">
+                    <div className="greeting">
+                        <Greating firstName={data.mainData.firstName} />
                     </div>
 
-                    {/* Colonne droite */}
-                    <KeyData keyData={data.mainData.keyData} />
+                    <div className="dashboard">
+                        {/* Colonne gauche */}
+                        <div className="charts">
+                            <div className="activity-chart">
+                                Activité quotidienne
+                            </div>
+
+                            {/* 3 petits graphiques */}
+                            <div className="small-charts">
+                                <div className="small-chart">
+                                    <SessionsChart sessions={data.averageSessions.sessions} />
+                                </div>
+                                <div className="small-chart">
+                                    <RadarChart data={data.performance.data}/>
+                                </div>
+                                <div className="small-chart">
+                                    <ScoreChart score={data.mainData.score} />
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Colonne droite */}
+                        <KeyData keyData={data.mainData.keyData} />
+                    </div>
                 </div>
             </main>
         </>

@@ -1,0 +1,30 @@
+.sessions-wrapper {
+    background-color: #FF0000;
+    border-radius: 5px;
+    width: 258px;
+    height: 263px;
+    position: relative;
+}
+
+.sessions-title {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    font-weight: 500;
+    width: 50%;
+    line-height: 1.4;
+    z-index: 1;
+}
+
+.sessions-tooltip {
+    position: absolute;
+    background-color: white;
+    padding: 8px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-text);
+    pointer-events: none;
+    transition: opacity 0.2s;
+}

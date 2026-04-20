@@ -1,26 +1,34 @@
 .main {
     margin-top: var(--header-height);
     margin-left: var(--sidebar-width);
-    min-height: calc(100vh - var(--header-height));
+    height: calc(100vh - var(--header-height));
     background-color: white;
-    padding: 48px 64px;
+    padding: 68px 107px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
 }
 
 .greeting {
-    margin-bottom: 48px;
+    margin-bottom: 50px;
+    flex-shrink: 0;
 }
 
 .dashboard {
+    width: 1126px;
+    height: 779px;
     display: flex;
     gap: 32px;
-    align-items: flex-start;
-}
-
-.activity-chart {
-    width: 100%;
-    height: 280px;
-    border-radius: 5px;
-    padding: 24px 0px;
+    align-items: stretch;
+    flex: 1;
+    min-height: 0;
 }
 
 .charts {
@@ -31,13 +39,23 @@
     min-width: 0;
 }
 
+.activity-chart {
+    width: 100%;
+    flex: 1.5;
+    border-radius: 5px;
+    padding: 24px;
+    background-color: #FBFBFB;
+    min-height: 0;
+}
+
 .small-charts {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
+    display: flex;
+    justify-content: space-between;
     height: 263px;
+    flex-shrink: 0;
 }
 
 .small-chart {
-    height: 100%;
+    width: 258px;
+    height: 263px;
 }

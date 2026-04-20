@@ -29,10 +29,15 @@
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 1.75rem;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.icon-btn img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
 }
 
 .sidebar-copyright {
@@ -41,6 +46,5 @@
     writing-mode: vertical-lr;
     transform: rotate(180deg);
     opacity: 0.5;
-    margin-top: auto;
     padding-bottom: 24px;
 }

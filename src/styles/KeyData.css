@@ -1,7 +1,9 @@
 .keydata-list {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    justify-content: space-between;
+    flex-shrink: 0;
+    width: 258px;
 }
 
 .keydata-card {
@@ -27,8 +29,8 @@
 }
 
 .keydata-icon img {
-    width: 32px;
-    height: 32px;
+    width: 15.8px;
+    height: 20px;
     object-fit: contain;
 }
 

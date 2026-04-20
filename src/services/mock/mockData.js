@@ -71,3 +71,30 @@ export const USER_PERFORMANCE = [
         ],
     },
 ]
+
+export const USER_AVERAGE_SESSIONS = [
+    {
+        userId: 12,
+        sessions: [
+            { day: 1, sessionLength: 30 },
+            { day: 2, sessionLength: 23 },
+            { day: 3, sessionLength: 45 },
+            { day: 4, sessionLength: 50 },
+            { day: 5, sessionLength: 68 },
+            { day: 6, sessionLength: 60 },
+            { day: 7, sessionLength: 52 },
+        ],
+    },
+    {
+        userId: 18,
+        sessions: [
+            { day: 1, sessionLength: 200 },
+            { day: 2, sessionLength: 23 },
+            { day: 3, sessionLength: 45 },
+            { day: 4, sessionLength: 50 },
+            { day: 5, sessionLength: 68 },
+            { day: 6, sessionLength: 60 },
+            { day: 7, sessionLength: 52 },
+        ],
+    },
+]
