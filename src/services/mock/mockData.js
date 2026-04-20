@@ -30,3 +30,44 @@ export const USER_MAIN_DATA = [
         },
     },
 ]
+
+export const USER_PERFORMANCE = [
+    {
+        userId: 12,
+        kind: {
+            1: "intensity",
+            2: "speed",
+            3: "strength",
+            4: "endurance",
+            5: "energy",
+            6: "cardio",
+        },
+        data: [
+            { value: 80, kind: 1 },
+            { value: 120, kind: 2 },
+            { value: 140, kind: 3 },
+            { value: 50, kind: 4 },
+            { value: 200, kind: 5 },
+            { value: 90, kind: 6 },
+        ],
+    },
+    {
+        userId: 18,
+        kind: {
+            1: "intensity",
+            2: "speed",
+            3: "strength",
+            4: "endurance",
+            5: "energy",
+            6: "cardio",
+        },
+        data: [
+            { value: 20, kind: 1 },
+            { value: 90, kind: 2 },
+            { value: 110, kind: 3 },
+            { value: 218, kind: 4 },
+            { value: 60, kind: 5 },
+            { value: 23, kind: 6 },
+        ],
+    },
+]

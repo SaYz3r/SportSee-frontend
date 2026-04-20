@@ -8,3 +8,23 @@ export class UserMainData {
         this.keyData = data.keyData
     }
 }
+
+export class UserPerformance {
+    constructor(data) {
+        this.userId = data.userId
+        // Traduction FR des kinds
+        const kindLabels = {
+            cardio: "Cardio",
+            energy: "Énergie",
+            endurance: "Endurance",
+            strength: "Force",
+            speed: "Vitesse",
+            intensity: "Intensité",
+        }
+        // On remplace les clés numériques par les labels FR
+        this.data = data.data.map((item) => ({
+            value: item.value,
+            kind: kindLabels[data.kind[item.kind]],
+        }))
+    }
+}

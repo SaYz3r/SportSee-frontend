@@ -6,6 +6,7 @@ import Greating from "../composants/Greating"
 import KeyData from "../composants/KeyData"
 import "../styles/Profile.css"
 import ScoreChart from "../composants/ScoreChart"
+import RadarChart from "../composants/RadarChart"
 
 function Profile() {
     const { userId } = useParams()
@@ -20,7 +21,7 @@ function Profile() {
             <Sidebar />
             <main className="main">
                 <div className="greeting">
-                    <Greating firstName={data.firstName} />
+                    <Greating firstName={data.mainData.firstName} />
                 </div>
 
                 <div className="dashboard">
@@ -33,15 +34,17 @@ function Profile() {
                         {/* 3 petits graphiques */}
                         <div className="small-charts">
                             <div className="small-chart">Sessions</div>
-                            <div className="small-chart">Radar</div>
                             <div className="small-chart">
-                                <ScoreChart score={data.score} />
+                                <RadarChart data={data.performance.data}/>
+                            </div>
+                            <div className="small-chart">
+                                <ScoreChart score={data.mainData.score} />
                             </div>
                         </div>
                     </div>
 
                     {/* Colonne droite */}
-                    <KeyData keyData={data.keyData} />
+                    <KeyData keyData={data.mainData.keyData} />
                 </div>
             </main>
         </>

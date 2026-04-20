@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { getUserMainData } from "../services/api.js"
+import { getUserMainData, getUserPerformance } from "../services/api.js"
 
 export function useUserData(userId) {
     const [data, setData] = useState(null)
@@ -12,16 +12,19 @@ export function useUserData(userId) {
         let cancelled = false
 
         setLoading(true)
-        getUserMainData(userId)
-            .then((result) => {
-                if (!cancelled) setData(result)
-            })
-            .catch((err) => {
-                if (!cancelled) setError(err.message)
-            })
-            .finally(() => {
-                if (!cancelled) setLoading(false)
-            })
+        Promise.all([
+            getUserMainData(userId),
+            getUserPerformance(userId),
+        ])
+        .then(([mainData, performance]) => {
+            if (!cancelled) setData({ mainData, performance })
+        })
+        .catch((err) => {
+            if (!cancelled) setError(err.message)
+        })
+        .finally(() => {
+            if (!cancelled) setLoading(false)
+        })
 
         return () => {
             cancelled = true
