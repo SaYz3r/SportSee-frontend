@@ -35,3 +35,15 @@ export class UserAverageSessions {
         this.sessions = data.sessions
     }
 }
+
+export class UserActivity {
+    constructor(data) {
+        this.userId = data.userId
+        // Remplace la date complète par un numéro de jour (1, 2, 3...)
+        this.sessions = data.sessions.map((session, index) => ({
+            day: index + 1,
+            kilogram: session.kilogram,
+            calories: session.calories,
+        }))
+    }
+}

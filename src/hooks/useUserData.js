@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { getUserMainData, getUserPerformance, getUserAverageSessions } from "../services/api.js"
+import { getUserMainData, getUserPerformance, getUserAverageSessions, getUserActivity } from "../services/api.js"
 
 export function useUserData(userId) {
     const [data, setData] = useState(null)
@@ -16,9 +16,10 @@ export function useUserData(userId) {
             getUserMainData(userId),
             getUserPerformance(userId),
             getUserAverageSessions(userId),
+            getUserActivity(userId),
         ])
-        .then(([mainData, performance, averageSessions]) => {
-            if (!cancelled) setData({ mainData, performance, averageSessions })
+        .then(([mainData, performance, averageSessions, activity]) => {
+            if (!cancelled) setData({ mainData, performance, averageSessions, activity })
         })
         .catch((err) => {
             if (!cancelled) setError(err.message)

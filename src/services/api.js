@@ -1,5 +1,5 @@
-import { USER_MAIN_DATA, USER_PERFORMANCE, USER_AVERAGE_SESSIONS } from "./mock/mockData.js"
-import { UserMainData, UserPerformance, UserAverageSessions } from "../models/UserDataModel.js"
+import { USER_MAIN_DATA, USER_PERFORMANCE, USER_AVERAGE_SESSIONS, USER_ACTIVITY } from "./mock/mockData.js"
+import { UserMainData, UserPerformance, UserAverageSessions, UserActivity } from "../models/UserDataModel.js"
 
 const USE_MOCK = true
 
@@ -37,4 +37,16 @@ export async function getUserAverageSessions(userId) {
     const response = await fetch(`http://localhost:3000/user/${userId}/average-sessions`)
     const json = await response.json()
     return new UserAverageSessions(json.data)
+}
+
+export async function getUserActivity(userId) {
+    if (USE_MOCK) {
+        const raw = USER_ACTIVITY.find((u) => u.userId === userId)
+        if (!raw) throw new Error(`Activité de l'utilisateur ${userId} introuvable`)
+        return new UserActivity(raw)
+    }
+
+    const response = await fetch(`http://localhost:3000/user/${userId}/activity`)
+    const json = await response.json()
+    return new UserActivity(json.data)
 }

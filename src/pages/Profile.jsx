@@ -8,6 +8,7 @@ import "../styles/Profile.css"
 import ScoreChart from "../composants/ScoreChart"
 import RadarChart from "../composants/RadarChart"
 import SessionsChart from "../composants/SessionsChart"
+import ActivityChart from "../composants/ActivityChart"
 
 function Profile() {
     const { userId } = useParams()
@@ -30,7 +31,7 @@ function Profile() {
                         {/* Colonne gauche */}
                         <div className="charts">
                             <div className="activity-chart">
-                                Activité quotidienne
+                                <ActivityChart sessions={data.activity.sessions} />
                             </div>
 
                             {/* 3 petits graphiques */}
