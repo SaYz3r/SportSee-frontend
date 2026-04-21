@@ -9,12 +9,11 @@
 .keydata-card {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: clamp(12px, 1.5vw, 24px);
     background-color: #FBFBFB;
     border-radius: 5px;
-    padding: 31px 32px;
-    width: 258px;
-    height: 124px;
+    padding: clamp(16px, 2vh, 31px) clamp(16px, 2vw, 32px);
+    width: 100%;
 }
 
 .keydata-icon {
@@ -41,13 +40,14 @@
 }
 
 .keydata-value {
-    font-size: 1.25rem;
+    font-size: clamp(0.9rem, 1.5vw, 1.25rem);
     font-weight: 700;
     color: var(--color-text);
+    white-space: nowrap;
 }
 
 .keydata-label {
-    font-size: 0.875rem;
+    font-size: clamp(0.7rem, 1vw, 0.875rem);
     font-weight: 500;
     color: var(--color-text-light);
 }

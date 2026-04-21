@@ -1,7 +1,7 @@
 import { USER_MAIN_DATA, USER_PERFORMANCE, USER_AVERAGE_SESSIONS, USER_ACTIVITY } from "./mock/mockData.js"
 import { UserMainData, UserPerformance, UserAverageSessions, UserActivity } from "../models/UserDataModel.js"
 
-const USE_MOCK = true
+const USE_MOCK = false
 
 export async function getUserMainData(userId) {
     if (USE_MOCK) {
