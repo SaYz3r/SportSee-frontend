@@ -1,7 +1,5 @@
 # SportSee — Frontend
 
-Dashboard de suivi sportif développé avec React et D3.js.
-
 ## Prérequis
 
 - Node.js >= 16

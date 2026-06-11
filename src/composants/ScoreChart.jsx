@@ -39,19 +39,6 @@ function ScoreChart({ score }) {
                 .attr("r", radius - 11)
                 .attr("fill", "white")
 
-            /*** Créer l'arc complet pour objectif complet a 100%
-            const backgroundArc = d3.arc()
-                .innerRadius(radius - 10)
-                .outerRadius(radius)
-                .startAngle(0)
-                .endAngle(2 * Math.PI)
-                .cornerRadius(10) 
-
-            svg.append("path")
-                .attr("transform", `translate(${cx}, ${cy})`)
-                .attr("d", backgroundArc)
-                .attr("fill", "#black") */
-
             // Créer l'arc selon l'objectif atteind
             const scoreArc = d3.arc()
                 .innerRadius(radius - 10)  // rayon intérieur
