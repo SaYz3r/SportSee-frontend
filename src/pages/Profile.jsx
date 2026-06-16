@@ -9,13 +9,30 @@ import ScoreChart from "../composants/ScoreChart"
 import RadarChart from "../composants/RadarChart"
 import SessionsChart from "../composants/SessionsChart"
 import ActivityChart from "../composants/ActivityChart"
+import ErrorPage from "../composants/ErrorPage"
 
 function Profile() {
     const { userId } = useParams()
     const { data, loading, error } = useUserData(Number(userId))
 
-    if (loading) return <p>Chargement...</p>
-    if (error) return <p>Erreur : {error}</p>
+    if (loading) return (
+        <>
+            <Header />
+            <Sidebar />
+            <div style={{
+                position: "fixed",
+                top: "55%",
+                left: "55%",
+                transform: "translate(-55%, -55%)",
+                textAlign: "center",
+                color: "#20253A"
+            }}>
+                <p style={{ fontSize: "24px", fontWeight: "700" }}>Chargement...</p>
+            </div>
+        </>
+    )
+
+    if (error) return <ErrorPage error={error} />
 
     return (
         <>

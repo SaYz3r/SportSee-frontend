@@ -1,7 +1,8 @@
 import { USER_MAIN_DATA, USER_PERFORMANCE, USER_AVERAGE_SESSIONS, USER_ACTIVITY } from "./mock/mockData.js"
 import { UserMainData, UserPerformance, UserAverageSessions, UserActivity } from "../models/UserDataModel.js"
 
-const USE_MOCK = false
+const USE_MOCK = true
+const BASE_URL = "http://localhost:3000"
 
 export async function getUserMainData(userId) {
     if (USE_MOCK) {
@@ -10,7 +11,13 @@ export async function getUserMainData(userId) {
         return new UserMainData(raw)
     }
 
-    const response = await fetch(`http://localhost:3000/user/${userId}`)
+    const response = await fetch(`${BASE_URL}/user/${userId}`)
+    if (!response.ok) {
+        if (response.status === 404) {
+            throw new Error("Utilisateur introuvable")
+        }
+        throw new Error("Erreur serveur")
+    }
     const json = await response.json()
     return new UserMainData(json.data)
 }
@@ -22,7 +29,13 @@ export async function getUserPerformance(userId) {
         return new UserPerformance(raw)
     }
 
-    const response = await fetch(`http://localhost:3000/user/${userId}/performance`)
+    const response = await fetch(`${BASE_URL}/user/${userId}/performance`)
+    if (!response.ok) {
+        if (response.status === 404) {
+            throw new Error("Utilisateur introuvable")
+        }
+        throw new Error("Erreur serveur")
+    }
     const json = await response.json()
     return new UserPerformance(json.data)
 }
@@ -34,7 +47,13 @@ export async function getUserAverageSessions(userId) {
         return new UserAverageSessions(raw)
     }
 
-    const response = await fetch(`http://localhost:3000/user/${userId}/average-sessions`)
+    const response = await fetch(`${BASE_URL}/user/${userId}/average-sessions`)
+    if (!response.ok) {
+        if (response.status === 404) {
+            throw new Error("Utilisateur introuvable")
+        }
+        throw new Error("Erreur serveur")
+    }
     const json = await response.json()
     return new UserAverageSessions(json.data)
 }
@@ -46,7 +65,13 @@ export async function getUserActivity(userId) {
         return new UserActivity(raw)
     }
 
-    const response = await fetch(`http://localhost:3000/user/${userId}/activity`)
+    const response = await fetch(`${BASE_URL}/user/${userId}/activity`)
+    if (!response.ok) {
+        if (response.status === 404) {
+            throw new Error("Utilisateur introuvable")
+        }
+        throw new Error("Erreur serveur")
+    }
     const json = await response.json()
     return new UserActivity(json.data)
 }
